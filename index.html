@@ -23,7 +23,10 @@
         <h1>Loading content from 1v1.lol...</h1>
     </div>
     <script>
-        fetch('content.html')
+        const corsProxy = 'https://cors-anywhere.herokuapp.com/';
+        const targetUrl = 'https://1v1.lol/';
+
+        fetch(corsProxy + targetUrl)
             .then(response => response.text())
             .then(data => {
                 document.getElementById('content').innerHTML = data;
